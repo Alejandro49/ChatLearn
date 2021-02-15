@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title> Sala de Chat </title>
+    <script type="text/javascript">
+        var websocket = new WebSocket("ws://localhost:8080/ChatLearn_war/html/ChatRoom");
+        websocket.onmessage = function processMessage(message) {
+            var jsonData = JSON.parse(message.data);
+            if (jsonData.message != null) messagesTextArea.value += jsonData.message +"\n";
+        }
+        function mandarMensaje() {
+            websocket.send(messageText.value);
+            messageText.value = "";
+        }
+    </script>
+</head>
+<body>
+
+    <textarea id="messagesTextArea" readonly="readonly" rows="10" cols="45"> </textarea> <br/>
+    <input type="text" id="messageText" size="50" /> <input type="button" value="Enviar" onclick="mandarMensaje();" />
+    <input type="button" value="Volver" onclick="location.href='listaContactos.jsp'" />
+
+    <div>
+        <h4> Intrucciones de la sala de chat </h4>
+        <ol>
+            <li> Introduzca su nombre de usuario y haga click en <b>Enviar</b></li>
+            <li> Ya puede empezar a chatear en la sala, escriba cualquier mensaje y pulse <b>Enviar</b> </li>
+            <li> Haga click en <b>Volver</b> para volver a su lista de contactos </li>
+
+        </ol>
+
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+A continuación se enumeran los requisitos para la realización del software
+del tanteo de los bolos:
+
+  - Una partida de bolos dura diez rondas, en cada una de las cuales
+    el jugador tiene uno o dos intentos para tirar diez bolos colocados
+    formando un triángulo.
+
+  - Si el jugador tira los diez bolos en el primer intento (esta jugada
+    se denomina "strike"), se anota diez bolos más el número de bolos
+    que tire en sus siguientes dos bolas.
+
+  - Si el jugador tira los diez bolos en el segundo intento (esta jugada
+    se denomina "spare"), se anota diez bolos más el número de bolos
+    que tire en su próxima bola.
+
+  - Si el jugador no tira los diez bolos (esta jugada se llama "ronda
+    abierta" u "open frame") se anota el número de bolos que haya tirado.
+
+  - El marcador se va acumulando en las diez rondas.
+
+  - Tras la última ronda, si es necesario, se lanzan una o dos bolas
+    extra para anotar el "bonus" final.
